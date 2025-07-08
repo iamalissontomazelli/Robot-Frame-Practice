@@ -1,17 +1,15 @@
-*** Settings *** 
-Documentation        Teste Projeto
+*** Settings ***
+Documentation    Teste Projeto Robot Framework
 
 
-*** Variables ***
-${nome}        Alisson Tomazelli
 
-
+**** Variables ***
+${nome}    Alisson Tomazelli
 
 *** Test Cases ***
 Imprimir Nome no Terminal
     Imprimir Nome
 
-
 *** Keywords ***
 Imprimir Nome
-    Log To Console        Olá ${nome}, Isso é um teste sobre o aprendizado do Robot Framework
+    Log To Console    Fazendo teste por  ${nome}
