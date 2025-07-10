@@ -105,9 +105,9 @@ chmod +x run_tests.sh
 
 ## 📎 Observações
 
-API utilizada: `https://api-suits.qacoders.dev.br/api`  
-Conta de teste: `sysadmin@qacoders.com`  
-Senha: `1234@Test`
+API utilizada: `https://api-suits.#####.dev.br/api`  
+Conta de teste: `######@##coders.com`  
+Senha: `########`
 
 ---
 
