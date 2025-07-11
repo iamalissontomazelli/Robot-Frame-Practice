@@ -1,219 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-07-10T20:43:43.021199" rpa="false" schemaversion="5">
-<suite id="s1" name="Put" source="/Users/alissontomazelli/Documents/ProjetoRF/put.robot">
-<test id="s1-t1" name="Mudar Status de Usuario para False" line="14">
-<kw name="Put Status False">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-07-11T11:55:27.149910" rpa="false" schemaversion="5">
+<suite id="s1" name="Delete" source="/Users/alissontomazelli/Documents/ProjetoRF/delete.robot">
+<test id="s1-t1" name="Deletar Usuario" line="14">
+<kw name="Delete User">
 <kw name="Pegar Token">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-10T20:43:43.060388" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<msg time="2025-07-11T11:55:27.189516" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
 <var>${body}</var>
 <arg>mail=sysadmin@qacoders.com</arg>
 <arg>password=1234@Test</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-10T20:43:43.060288" elapsed="0.000116"/>
+<status status="PASS" start="2025-07-11T11:55:27.189415" elapsed="0.000117"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-07-10T20:43:43.060501" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<msg time="2025-07-11T11:55:27.189630" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
 <arg>${body}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-07-10T20:43:43.060449" elapsed="0.000068"/>
+<status status="PASS" start="2025-07-11T11:55:27.189578" elapsed="0.000068"/>
 </kw>
 <kw name="Criar Sessao">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-10T20:43:43.060667" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<msg time="2025-07-11T11:55:27.189797" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
 <var>${headers}</var>
 <arg>accept=application/json</arg>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-10T20:43:43.060617" elapsed="0.000059"/>
+<status status="PASS" start="2025-07-11T11:55:27.189746" elapsed="0.000060"/>
 </kw>
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-10T20:43:43.060782" level="INFO">Creating Session using : alias=develop, url=https://api-suits.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-07-11T11:55:27.189915" level="INFO">Creating Session using : alias=develop, url=https://api-suits.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>alias=develop</arg>
 <arg>url=${baseUrl}</arg>
 <arg>headers=${headers}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-10T20:43:43.060705" elapsed="0.000134"/>
+<status status="PASS" start="2025-07-11T11:55:27.189836" elapsed="0.000138"/>
 </kw>
-<status status="PASS" start="2025-07-10T20:43:43.060555" elapsed="0.000305"/>
+<status status="PASS" start="2025-07-11T11:55:27.189685" elapsed="0.000310"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-07-10T20:43:45.569189" level="INFO">POST Request : url=https://api-suits.qacoders.dev.br/api/login 
+<msg time="2025-07-11T11:55:28.803969" level="INFO">POST Request : url=https://api-suits.qacoders.dev.br/api/login 
  path_url=/api/login 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
  body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
  </msg>
-<msg time="2025-07-10T20:43:45.569555" level="INFO">POST Response : url=https://api-suits.qacoders.dev.br/api/login 
+<msg time="2025-07-11T11:55:28.804300" level="INFO">POST Response : url=https://api-suits.qacoders.dev.br/api/login 
  status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '1334', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 10 Jul 2025 19:43:44 GMT', 'Etag': 'W/"536-ffmW8cna9L4WPRy4L8RP5UJSxUU"', 'X-Powered-By': 'Express'} 
- body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"68653a55ec5a45c27608d37c","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$wJZ7DsX3dBRdZIEx.vCpq.DzjC8SHnrWTGu.dprFnTWG2g7t/82jy","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"quarta-feira, 02/07/2025, 10:55:33 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"68653a55ec5a45c27608d37d"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjQsImV4cCI6MTc1MjI2MzAyNH0.CJoL-Ssf1cOHlPsoZuJSCY0jAGiZGC484_somLBk-nk"} 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '1334', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 11 Jul 2025 10:55:27 GMT', 'Etag': 'W/"536-XoUqUlMgnDq46Ek9s8L5qcUqOp0"', 'X-Powered-By': 'Express'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"68653a55ec5a45c27608d37c","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$wJZ7DsX3dBRdZIEx.vCpq.DzjC8SHnrWTGu.dprFnTWG2g7t/82jy","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"quarta-feira, 02/07/2025, 10:55:33 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"68653a55ec5a45c27608d37d"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A"} 
  </msg>
-<msg time="2025-07-10T20:43:45.569798" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api-suits.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-11T11:55:28.804462" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api-suits.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-07-10T20:43:45.570260" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<msg time="2025-07-11T11:55:28.804763" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
 <var>${resposta}</var>
 <arg>alias=develop</arg>
 <arg>url=/login</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-10T20:43:43.060886" elapsed="2.509452"/>
+<status status="PASS" start="2025-07-11T11:55:27.190021" elapsed="1.614792"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${resposta}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.570841" elapsed="0.000573"/>
+<status status="PASS" start="2025-07-11T11:55:28.805181" elapsed="0.000426"/>
 </kw>
 <return>
 <value>${resposta.json()["token"]}</value>
-<status status="PASS" start="2025-07-10T20:43:45.571518" elapsed="0.000124"/>
+<status status="PASS" start="2025-07-11T11:55:28.805681" elapsed="0.000083"/>
 </return>
-<msg time="2025-07-10T20:43:45.572542" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHN...</msg>
+<msg time="2025-07-11T11:55:28.806429" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHN...</msg>
 <var>${token}</var>
-<status status="PASS" start="2025-07-10T20:43:43.060112" elapsed="2.512527"/>
+<status status="PASS" start="2025-07-11T11:55:27.189240" elapsed="1.617217"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-10T20:43:45.573225" level="INFO">${body} = {'status': 'false'}</msg>
-<var>${body}</var>
-<arg>status=false</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.572927" elapsed="0.000324"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2025-07-10T20:43:45.875062" level="INFO">PUT Request : url=https://api-suits.qacoders.dev.br/api/user/status/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjQsImV4cCI6MTc1MjI2MzAyNH0.CJoL-Ssf1cOHlPsoZuJSCY0jAGiZGC484_somLBk-nk 
- path_url=/api/user/status/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjQsImV4cCI6MTc1MjI2MzAyNH0.CJoL-Ssf1cOHlPsoZuJSCY0jAGiZGC484_somLBk-nk 
- headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '19'} 
- body=b'{"status": "false"}' 
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-11T11:55:29.110699" level="INFO">DELETE Request : url=https://api-suits.qacoders.dev.br/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A 
+ path_url=/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
  </msg>
-<msg time="2025-07-10T20:43:45.875428" level="INFO">PUT Response : url=https://api-suits.qacoders.dev.br/api/user/status/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjQsImV4cCI6MTc1MjI2MzAyNH0.CJoL-Ssf1cOHlPsoZuJSCY0jAGiZGC484_somLBk-nk 
- status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '69', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 10 Jul 2025 19:43:44 GMT', 'Etag': 'W/"45-u5g3Ijsg0HfBjKZlewjvrjCsB2A"', 'X-Powered-By': 'Express'} 
- body={"msg":"Status do usuario atualizado com sucesso para status false."} 
+<msg time="2025-07-11T11:55:29.110885" level="INFO">DELETE Response : url=https://api-suits.qacoders.dev.br/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A 
+ status=400, reason=Bad Request 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '63', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 11 Jul 2025 10:55:27 GMT', 'Etag': 'W/"3f-O9rifBSrBsjLhsfGHBwqcfNkXcs"', 'X-Powered-By': 'Express'} 
+ body={"alert":["Esse usuário não existe em nossa base de dados."]} 
  </msg>
-<msg time="2025-07-10T20:43:45.875566" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api-suits.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-07-11T11:55:29.111181" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api-suits.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
+<msg time="2025-07-11T11:55:29.111515" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api-suits.qacoders.dev.br/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A</msg>
 <arg>alias=develop</arg>
-<arg>url=/user/status/${id_user}?token=${token}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.573629" elapsed="0.302067"/>
+<arg>url=/user/${id_user}?token=${token}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-11T11:55:28.806567" elapsed="0.307158">HTTPError: 400 Client Error: Bad Request for url: https://api-suits.qacoders.dev.br/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A</status>
 </kw>
-<status status="PASS" start="2025-07-10T20:43:43.059985" elapsed="2.815854"/>
+<status status="FAIL" start="2025-07-11T11:55:27.189112" elapsed="1.924832">HTTPError: 400 Client Error: Bad Request for url: https://api-suits.qacoders.dev.br/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A</status>
 </kw>
-<status status="PASS" start="2025-07-10T20:43:43.059707" elapsed="2.816465"/>
-</test>
-<test id="s1-t2" name="Mudar Status de Usuario para True" line="17">
-<kw name="Put Status True">
-<kw name="Pegar Token">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-10T20:43:45.877959" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
-<var>${body}</var>
-<arg>mail=sysadmin@qacoders.com</arg>
-<arg>password=1234@Test</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.877715" elapsed="0.000268"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-07-10T20:43:45.878272" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
-<arg>${body}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.878100" elapsed="0.000212"/>
-</kw>
-<kw name="Criar Sessao">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-10T20:43:45.878737" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
-<var>${headers}</var>
-<arg>accept=application/json</arg>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.878587" elapsed="0.000173"/>
-</kw>
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-10T20:43:45.879083" level="INFO">Creating Session using : alias=develop, url=https://api-suits.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>alias=develop</arg>
-<arg>url=${baseUrl}</arg>
-<arg>headers=${headers}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-10T20:43:45.878845" elapsed="0.000456"/>
-</kw>
-<status status="PASS" start="2025-07-10T20:43:45.878419" elapsed="0.000937"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-07-10T20:43:47.326302" level="INFO">POST Request : url=https://api-suits.qacoders.dev.br/api/login 
- path_url=/api/login 
- headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
- body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
- </msg>
-<msg time="2025-07-10T20:43:47.326465" level="INFO">POST Response : url=https://api-suits.qacoders.dev.br/api/login 
- status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '1334', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 10 Jul 2025 19:43:45 GMT', 'Etag': 'W/"536-H5Su+UKM0fn+gk6Ms5Cvi27+viU"', 'X-Powered-By': 'Express'} 
- body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"68653a55ec5a45c27608d37c","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$wJZ7DsX3dBRdZIEx.vCpq.DzjC8SHnrWTGu.dprFnTWG2g7t/82jy","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"quarta-feira, 02/07/2025, 10:55:33 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"68653a55ec5a45c27608d37d"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjUsImV4cCI6MTc1MjI2MzAyNX0.bE9lkIkmLX6ZhxDzR6xTE0JEVdhH3I_fUQLXb5sIpcY"} 
- </msg>
-<msg time="2025-07-10T20:43:47.326614" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api-suits.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-07-10T20:43:47.326858" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
-<var>${resposta}</var>
-<arg>alias=develop</arg>
-<arg>url=/login</arg>
-<arg>json=${body}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-10T20:43:45.879435" elapsed="1.447457"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${resposta}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-07-10T20:43:47.327254" elapsed="0.000450"/>
-</kw>
-<return>
-<value>${resposta.json()["token"]}</value>
-<status status="PASS" start="2025-07-10T20:43:47.327798" elapsed="0.000088"/>
-</return>
-<msg time="2025-07-10T20:43:47.328708" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHN...</msg>
-<var>${token}</var>
-<status status="PASS" start="2025-07-10T20:43:45.877495" elapsed="1.451259"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-10T20:43:47.329167" level="INFO">${body} = {'status': 'true'}</msg>
-<var>${body}</var>
-<arg>status=true</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-10T20:43:47.328929" elapsed="0.000264"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2025-07-10T20:43:47.588194" level="INFO">PUT Request : url=https://api-suits.qacoders.dev.br/api/user/status/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjUsImV4cCI6MTc1MjI2MzAyNX0.bE9lkIkmLX6ZhxDzR6xTE0JEVdhH3I_fUQLXb5sIpcY 
- path_url=/api/user/status/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjUsImV4cCI6MTc1MjI2MzAyNX0.bE9lkIkmLX6ZhxDzR6xTE0JEVdhH3I_fUQLXb5sIpcY 
- headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '18'} 
- body=b'{"status": "true"}' 
- </msg>
-<msg time="2025-07-10T20:43:47.588373" level="INFO">PUT Response : url=https://api-suits.qacoders.dev.br/api/user/status/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIxNzY2MjUsImV4cCI6MTc1MjI2MzAyNX0.bE9lkIkmLX6ZhxDzR6xTE0JEVdhH3I_fUQLXb5sIpcY 
- status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '68', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 10 Jul 2025 19:43:46 GMT', 'Etag': 'W/"44-+ZXX1kbItEqRysXG0netwR/VlCw"', 'X-Powered-By': 'Express'} 
- body={"msg":"Status do usuario atualizado com sucesso para status true."} 
- </msg>
-<msg time="2025-07-10T20:43:47.588490" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api-suits.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<arg>alias=develop</arg>
-<arg>url=/user/status/${id_user}?token=${token}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-10T20:43:47.329296" elapsed="0.259345"/>
-</kw>
-<status status="PASS" start="2025-07-10T20:43:45.877152" elapsed="1.711644"/>
-</kw>
-<status status="PASS" start="2025-07-10T20:43:45.876518" elapsed="1.712573"/>
+<status status="FAIL" start="2025-07-11T11:55:27.188871" elapsed="1.925389">HTTPError: 400 Client Error: Bad Request for url: https://api-suits.qacoders.dev.br/api/user/686d45e4ec5a45c2760959a7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODY1M2E1NWVjNWE0NWMyNzYwOGQzN2MiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR3Slo3RHNYM2RCUmRaSUV4LnZDcHEuRHpqQzhTSG5yV1RHdS5kcHJGblRXRzJnN3QvODJqeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAwMi8wNy8yMDI1LCAxMDo1NTozMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY4NjUzYTU1ZWM1YTQ1YzI3NjA4ZDM3ZCJ9XSwiX192IjowLCJpYXQiOjE3NTIyMzEzMjcsImV4cCI6MTc1MjMxNzcyN30.Gj-OGBke-VUgO5UPqznhpxb1swByPbRyXCXLfFMDB5A</status>
 </test>
 <doc>Pegar Token</doc>
-<status status="PASS" start="2025-07-10T20:43:43.021831" elapsed="4.567963"/>
+<status status="FAIL" start="2025-07-11T11:55:27.150362" elapsed="1.964404"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Put" id="s1" pass="2" fail="0" skip="0">Put</stat>
+<stat name="Delete" id="s1" pass="0" fail="1" skip="0">Delete</stat>
 </suite>
 </statistics>
 <errors>
